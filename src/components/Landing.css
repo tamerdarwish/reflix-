@@ -1,0 +1,67 @@
+.user-card{
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    align-self: center;
+}
+
+.rented-movie img{
+    display: block;
+    width: 300px;
+    height:300px;
+    margin: 5px;
+    order: 3;
+    padding: 20px;
+    align-content: center;
+    align-self: center;
+    border-radius: 10% 5%;
+}
+
+.not-rented-movie img{
+    display: block;
+    width: 300px;
+    height:300px;
+    margin: 5px;
+    order: 3;
+    padding: 20px;
+    align-content: center;
+    align-self: center;
+    border-radius: 10% 5%;
+}
+
+.movies-container{
+    display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+    
+}
+
+.catalg-movies{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.rented-movies{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.movie-detail img { 
+    display: block;
+    width: 300px;
+    height:300px;
+    margin: 5px;
+    order: 3;
+    padding: 20px;
+    align-content: center;
+    align-self: center;
+    border-radius: 10% 5%;
+}
+.movie-detail{
+    align-content: center;
+    display: blocks;
+ 
+}
