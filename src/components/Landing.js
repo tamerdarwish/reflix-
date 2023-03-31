@@ -1,16 +1,26 @@
 import './Landing.css';
-import { BrowserRouter as Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
+import  {useState} from 'react';
 
 
 
 
 const Landing = ({ usersData }) => {
 
-  return (
-    
-    usersData.map(user => <span className ='user-card' style={{backgroundColor: user.backgroundColor}}>{user.name}</span>)
+  let newUserID
 
+  return (
+    <div className='users-cards-container'>
     
+    {usersData.map((user) => <Link to={`/catalog/${user.id}/`}>
+    <span className ='user-card' style={{backgroundColor: user.backgroundColor}}>
+      
+       {user.name} 
+      
+      </span></Link>)} 
+      
+
+    </div>
  
   );
 }

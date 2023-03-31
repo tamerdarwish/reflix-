@@ -16,9 +16,9 @@ let moviesData = [
 ]
 
 let usersData = [
-  { id: 0, name: 'Tamer', backgroundColor: 'green', budget: 100 },
-  { id: 0, name: 'Omer', backgroundColor: 'blue', budget: 100 },
-  { id: 0, name: 'Taha', backgroundColor: 'red', budget: 100 }
+  { id: 0, name: 'Tamer', backgroundColor: 'green', budget: 500, catalogMovies: moviesData, rentedMovie:[]},
+  { id: 1, name: 'Omer', backgroundColor: 'blue', budget: 100, catalogMovies:moviesData, rentedMovie:[] },
+  { id: 2, name: 'Taha', backgroundColor: 'red', budget: 103, catalogMovies:moviesData, rentedMovie:[] }
 ]
 
 
