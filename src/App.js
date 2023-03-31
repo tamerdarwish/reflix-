@@ -33,14 +33,15 @@ let GetMovieID = () => {
 }
 
 let GetUserID = () => {
-  let { UserID } = useParams();
-  let UserIndex = parseInt(UserID)
+  let { userID } =  useParams();
+  let UserIndex = parseInt(userID)
   return (
-
-    <Catalog moviesData={moviesData} user={usersData[UserIndex]} />
+    <Catalog moviesData={moviesData}  user={usersData[UserIndex]} />
 
   );
 }
+
+
 
 
 function App() {
@@ -48,15 +49,18 @@ function App() {
 
   return (
 
+    <Router>
+      <div className="App">
 
-    <div className="App">
-      <MovieDetail movie={moviesData[1]} />
+      </div>
+      <Routes>
+        <Route path="/" element={<Landing usersData={usersData} />} />
+        <Route path="/catalog/:userID" Component={GetUserID}/>
+        <Route path="/movies/:movieID" Component={GetMovieID}/>
+      </Routes>
 
-    </div>
 
-
-
-
+    </Router>
 
   );
 }

@@ -1,7 +1,7 @@
 import './Landing.css';
 import Movie from './Movie';
 
-const Catalog = ({ moviesData , user }) => {
+const Catalog = ({ moviesData ,user}) => {
  
     
   return (
