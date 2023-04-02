@@ -8,13 +8,13 @@ const RentedMovie = ({ moviesData,user, filteredResultsByInput,removeClick }) =>
     let rentedFilterResults = filteredResultsByInput.filter(movie => movie.isRented)
 
     return (
-        <div>
+        <div className='rented-container'>
             {filteredResultsByInput.length === 0 ?
                 <div className='rented-movies'>
-                    <h4>Rented Movies:</h4>
-                    {rentedMovies.map(movie => <div className='rented-movie'> <button  onClick={() => removeClick(movie.id,user.id)}>-</button>  <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>)}
+                    <h2>Rented Movies:</h2>
+                    {rentedMovies.map(movie => <div className='rented-movie'> <div  onClick={() => removeClick(movie.id,user.id)}>➖</div>  <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>)}
                 </div>
-                : <div>  {rentedFilterResults.map(movie => <div className='rented-movie'> <button onClick={() => removeClick(movie.id,user.id)}>-</button>  <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>)}</div>
+                : <div>  {rentedFilterResults.map(movie => <div className='rented-movie'> <button onClick={() => removeClick(movie.id,user.id)}>➖</button>  <Link to={`/movies/${movie.id}`}><img src={movie.img}></img><h2>{movie.title}</h2></Link></div>)} </div>
             }
 
 
@@ -28,21 +28,21 @@ const CatalogMovie = ({ moviesData, user, filteredResultsByInput,plusClick, remo
     let rentedMovies = moviesData.filter(movie => movie.isRented)
  
     return (
-        <div>
-            <h4>Catalog:</h4>
+        <div className='catalog-container'>
+            <h2>Catalog:</h2>
             {filteredResultsByInput.length === 0 ? 
             <div className='catalg-movies'>
                 
                 {moviesData.map(movie => movie.isRented ?
-                    <div className='rented-movie'> <button>-</button><Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>
-                    :  <div className='not-rented-movie'>  <button onClick={() => plusClick(movie.id,user.id)}>+</button> <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>
+                    <div className='rented-movie'> <div onClick={() => removeClick(movie.id,user.id)}>➖</div><Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link><h2>{movie.title}</h2></div>
+                    :  <div className='not-rented-movie'>  <div onClick={() => plusClick(movie.id,user.id)}>➕</div> <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link><h2>{movie.title}</h2></div>
                 )}
                 
             </div>
             
             :  filteredResultsByInput.map(movie => movie.isRented ?
-                <div className='rented-movie'> <button >-</button><Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>
-                : <div className='not-rented-movie'>  <button onClick={() => plusClick(movie.id,user.id)}>+</button> <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link></div>
+                <div className='rented-movie'> <div >➖</div><Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link><h2>{movie.title}</h2></div>
+                : <div className='not-rented-movie'>  <button onClick={() => plusClick(movie.id,user.id)}>➕</button> <Link to={`/movies/${movie.id}`}><img src={movie.img}></img></Link><h2>{movie.title}</h2></div>
             )
         }
 
@@ -76,11 +76,11 @@ const Movie = ({ moviesData, user , plusClick,removeClick}) => {
     return (
 
         <div>
-            <input placeholder='Search' value={searchTerm} onChange={handleSearch} />
-            <div className='movies-container'>
+            <input id='search-input' placeholder='Search' value={searchTerm} onChange={handleSearch} />
+                <div className='movies-container'>
                 <RentedMovie moviesData={moviesData} filteredResultsByInput={searchResults} removeClick = {removeClick} user={user}/>
                 <CatalogMovie moviesData={moviesData}  user={user} filteredResultsByInput={searchResults} plusClick={plusClick} removeClick={removeClick} />
-            </div>
+                </div>
         </div>
     );
 }

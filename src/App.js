@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo/Reflex-Logo-Vita-Dark.png'
 import './App.css';
 import Landing from './components/Landing';
 import Catalog from './components/Catalog';
@@ -6,11 +6,6 @@ import MovieDetail from './components/MovieDetail';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import  {useState} from 'react';
-
-
-
-
-
 
 function App() {
   
@@ -47,8 +42,6 @@ function App() {
     setUserCatalogData(newUsersData)
 }
   
-  
-  
   let GetMovieID = () => {
     let { movieID } = useParams();
     let movieIndex = parseInt(movieID)
@@ -67,14 +60,11 @@ function App() {
     );
   }
   
-  
- 
-  
-
   return (
 
     <Router>
       <div className="App">
+      <Link to={'/'}> <img id='logo' src={logo} /> </Link>
 
       </div>
       <Routes>
@@ -82,8 +72,6 @@ function App() {
         <Route path="/catalog/:userID" Component={GetUserID}/>
         <Route path="/movies/:movieID" Component={GetMovieID}/>
       </Routes>
-
-
     </Router>
 
   );

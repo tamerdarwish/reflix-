@@ -5,7 +5,7 @@ const Catalog = ({  user,plusClick,removeClick}) => {
  
     
   return (
-    <div>
+    <div className='catalog-container'>
       <h2>Welcome {user.name}!</h2>
       <h3>Budget: {user.budget}</h3>
 
