@@ -1,18 +1,17 @@
-
-import './Landing.css';
+import './Components.css';
 
 const MoviesDetail = ({ movie }) => {
 
   return (
+    <div>
     <div className = 'movie-detail'>
-        <div className='movie-title'>{movie.title}({movie.year})</div>
+        <div id='movie-title'>{movie.title}({movie.year})</div>
         <img src = {movie.img}/>
         <p>{movie.descrShort}</p> 
 
-
     </div>
     
- 
+ </div>
   );
 }
 

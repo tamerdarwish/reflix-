@@ -139,7 +139,28 @@ body{
     color: aliceblue;
 }
 
-.movie-title{
+#movie-title{
     color: aliceblue;
     font-size: larger;
+}
+
+.movie-detail{
+    color: aliceblue;
+    font-size:x-large;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#home{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+}
+
+.catalog{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    margin-left: 800px;
+    margin-bottom: 20px;
+    
 }
